@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+
+gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'sinatra-authorization'
+gem 'will_paginate'
+gem 'padrino-helpers'
+gem 'thin'
+gem 'data_mapper'
+gem 'dm-mysql-adapter'

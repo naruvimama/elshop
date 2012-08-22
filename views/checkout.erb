@@ -1,0 +1,28 @@
+<%= %>
+<div class="cart_items">
+
+</div>
+<div>
+	<form action="/checkout" method="post">
+		<label for="delivery[name]">Name</label>
+		<input type="text" name="delivery[name]"></input>
+		<label for="delivery[email]">Email</label>
+		<input type="text" name="delivery[email]"></input>
+		<label for="delivery[phone]">Phone/Mobile</label>
+		<input type="text" name="delivery[phone]"></input>
+		<label for="delivery[address_l1]">Address line 1</label>
+		<input type="text" name="delivery[address_l1]"></input>
+		<label for="delivery[address_l2]">Address line 2</label>
+		<input type="text" name="delivery[address_l2]"></input>
+		<label for="delivery[city]">City</label>
+		<input type="text" name="delivery[city]"></input>
+		<label for="delivery[pin]">Pincode</label>
+		<input type="text" name="delivery[pincode]"></input>
+		<label for="delivery[ddate]">Convenient deliver time (will be confirmed by phone)</label>
+		<input type="text" name="delivery[ddate]"></input>
+		<label for="delivery[note]">Note</input>
+		<input type="textarea" name="delivery[note]"></input>
+		<input type="submit" value="Confirm order"></input>
+	</form>
+</div>
+

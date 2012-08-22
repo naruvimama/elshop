@@ -1,0 +1,84 @@
+<select name='brand_id' value=<%= item.brand_id %>>
+	<% brands.each do |brand| %>
+		<option value=<%= brand.id%>><%= brand.name%></option>
+	<%end%>
+</select>
+
+<input type="hidden" value =<%=item.id %> ></input>
+<label for="model_value">Model number</label>
+<input type='text' name="model_number" value=<%=item.model_number %> ></input>
+
+<label for="name">Name</label>
+<input type='text' name="name" value=<%=item.name %> ></input>
+
+<label for="star_rating">Star rating</label>
+<input type='text' name="star_rating" value=<%=item.star_rating %> ></input>
+
+<label for="product_url">Product url</label>
+<input type='text' name="product_url" value=<%=item.product_url %> ></input>
+
+<label for="product_pic">Product picture</label>
+<input type='text' name="product_pic" value=<%=item.product_pic %> ></input>
+
+<label for="product_pic_small">Product picture (small)</label>
+<input type='text' name="product_pic_small" value=<%=item.product_pic_small %> ></input>
+
+<label for="MRP">MRP</label>
+<input type='text' name="MRP" value=<%=item.MRP %> ></input>
+
+<label for="price">Price</label>
+<input type='text' name="price" value=<%=item.price %> ></input>
+
+<label for="colour">Colour</label>
+<input type='text' name="colour" value=<%=item.colour %> ></input>
+
+<label for="description">Description </label>
+<input type='text' name="description" value=<%=item.description %> ></input>
+
+<label for="topselling">Top selling</label>
+<input type='checkbox' name="topselling" value=true <%= 'checked' if item.topselling %> ></input>
+
+<label for="valueformoney">Value for money</label>
+<input type='checkbox' name="valueformoney" value=true <%= 'checked' if item.valueformoney %> ></input>
+
+<label for="toprange">Top range</label>
+<input type='checkbox' name="toprange" value=true <%='checked' if item.toprange %> ></input>
+
+<h3><%= " #{@cat.capitalize} - specific properties" %></h3>
+<hr/>
+<% if @cat=="refrigerator" %>
+
+	<label for="doors">Doors</label>
+	<input type='text' name="doors" value=<%=item.doors %> ></input>
+	<label for="volume">Volume</label>
+	<input type='text' name="volume" value=<%=item.volume %> ></input>
+
+<% end %>
+
+<% if @cat=="washingmachine"%>
+
+	<label for="loading">Loading</label>
+	<input type='text' name="loading" value=<%=item.loading %> ></input>
+	<label for="capacity">Capacity</label>
+	<input type='text' name="capacity" value=<%=item.capacity %> ></input>
+
+<% end %>
+
+<% if @cat=="dishwasher"%>
+
+	<label for="type">Type</label>
+	<input type='text' name="type" value=<%=item.type %> ></input>
+	<label for="capacity">Capacity</label>
+	<input type='text' name="capacity" value=<%=item.capacity %> ></input>
+
+<% end %>
+
+<% if @cat=="airconditioner"%>
+
+	<label for="type">Type</label>
+	<input type='text' name="type" value=<%=item.type %> ></input>
+	<label for="capacity">Capacity</label>
+	<input type='text' name="capacity" value=<%=item.capacity %> ></input>
+
+<% end %>
+<input type='submit' value='Save'></input>

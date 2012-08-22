@@ -1,0 +1,5 @@
+<h2><%= "New #{@cat} form" %></h2>
+<form action=<%="/admin/appliances/#{@cat}/create"%> method='post'>
+	<%= erb :item_form, :locals => {brands:@brands, item:@item} %>
+</form>	
+

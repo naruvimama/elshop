@@ -1,0 +1,11 @@
+<div>
+	<a href=<%= url("/showcase/#{item.class.to_s.downcase}/#{item.id}")%>>
+		<img src=<%= item.product_pic%>/>
+		<h4><%= "#{item.brand.name} - #{item.name} - #{item.model}" %></h4>
+		<h4>ElShop price <%= item.price %></h4>
+		<h3>Showroom price <strike><%=item.MRP%></strike></h3>
+	</a>
+	<a class="buy_now_btn" href="#" data_id=<%= item.id %>>Buy now</a>
+	<a class="add_to_cart_btn" href="#" data_id=<%= item.id %>>Add to cart</a>
+</div>
+</div>

@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>El Shop</title>
+	</head>
+	<body>
+		<% if logged_in? %>
+			<a href="/admin/home"> Admin home </a>
+		<%else%>
+			<span><h2>El Shop</h2></span>
+			<div id="cart_holder">
+				<h3>Your Cart</h3>
+				<div id="cart_items"></div>
+				<div id="cart_total"></div>
+				<div id="cart_actions" style:"display:none">
+					<a class="clear_cart_btn" href="/clearcart">Clear cart</a>
+					<a class="checkout_btn" href="/checkout">Checkout</a>
+				</div>
+			</div>
+		<%end%>
+		<%= yield %>
+		<script rel="javascript" src="/jquery-1.8.0.min.js"></script>
+		<script rel="javascript" src="/custom.js"></script>
+		<script rel="javascript" src="/cart.js"></script>
+	</body>
+</html>

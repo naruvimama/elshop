@@ -1,0 +1,17 @@
+<div class="sidebar">
+	<a href="/showcase/refrigerators">Refrigerators</a>
+	<a href="/showcase/washingmachines">Washingmachines</a>
+	<a href="/showcase/airconditioners">Airconditioners</a>
+	<a href="/showcase/dishwashers">Dishwashers</a>
+</div>
+<% @categories.each do |cat|%>
+	<div>
+		<h3><%= plural(cat).capitalize %></h3>
+		<div>
+			<% @items[(plural cat)].each do |item|%>
+				<%= erb :show_small, :locals => {item:item, cat:cat} %>
+			<%end%>
+		</div>
+		<span><a src=<%= url('/#{plural(cat)}')%>>More <%= plural(cat)%></span>
+	<%end%>
+</div>

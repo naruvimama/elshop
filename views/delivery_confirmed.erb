@@ -1,0 +1,21 @@
+<div class="delivery_confirmation">
+	Thank you for placing an order with ElShop.
+	Your order has been placed and soon a sales representative will get in touch with you to confirm your delivery.
+	Your order confirmation number is <%= @delivery.delivery_code %>.
+	You will shortly receive an email confirming your order.
+	You could write to sales@elshop.in for any further questions.
+	<span>Your order is displayed bellow.</span>
+	<h2>Delivery code :  <%= @delivery.delivery_code %> </h2>
+	<div class="order_list">
+		<% @delivery.delivery_items.each do |di| %>
+			<%= di.model_number %>
+			<%= di.name %>
+			<%= di.brand %>
+			<%= di.item_type %>
+			<%= di.price %>
+			<%= di.numbers %>
+			</br>
+		<%end%>
+	</div>
+	<a href="/home"> Go back </a>
+</div>

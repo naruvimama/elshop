@@ -1,0 +1,17 @@
+<h2><%= @item_category.capitalize %></h2>
+<div>
+	<h3> Filters </h3>
+	<span>
+		<% @options[(singular @item_category).capitalize].each do |property, values| %>
+			<h4><%= property %></h4>
+			<ul>
+				<% values.each do |v|%>
+					<li><a class="filter_btn" href='#' data_cat=<%= "#{@item_category}" %> data_prop=<%= "#{property}" %> data_value=<%= escape_space("#{v[property]}") %>><%= v[property] %></a></li>
+				<%end%>
+			</ul>
+		<%end%>
+  </span>
+</div>
+<div class="products_showcase">
+	<%= erb :items %>
+</div>

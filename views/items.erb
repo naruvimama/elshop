@@ -2,8 +2,8 @@
   <div class="small_appliance_box">
 		<%= erb :show_small, :locals => {item:item, cat:@item_category} %>
 		<% if logged_in? %>
-			<a class="delete_appliance" href=<%= "/admin/appliances/#{singular @item_category}/destroy/#{item.id}" %> >Delete item</a> 
-			<a href=<%= "/admin/appliances/#{singular @item_category}/edit/#{item.id}" %> >Edit item</a> 
+			<a class="delete_appliance btn btn-danger" href=<%= "/admin/appliances/#{singular @item_category}/destroy/#{item.id}" %> >Delete item</a> 
+			<a class="btn btn-warning" href=<%= "/admin/appliances/#{singular @item_category}/edit/#{item.id}" %> >Edit item</a> 
 		<% end %>
   </div>
 <%end%>

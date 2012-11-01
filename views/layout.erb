@@ -6,21 +6,25 @@
 		<link href="/css/bootstrap-responsive.min.css" rel="stylesheet">
 	</head>
 	<body>
-		<% if logged_in? %>
-			<a href="/admin/home"> Admin home </a>
-		<%else%>
-			<span><h2>El Shop</h2></span>
-			<div id="cart_holder">
-				<h3>Your Cart</h3>
-				<div id="cart_items"></div>
-				<div id="cart_total"></div>
-				<div id="cart_actions" style:"display:none">
-					<a class="clear_cart_btn" href="/clearcart">Clear cart</a>
-					<a class="checkout_btn" href="/checkout">Checkout</a>
+		<div class="container">
+			<% if logged_in? %>
+				<a href="/admin/home"> Admin home </a>
+			<%else%>
+				<span><h2>El Shop</h2></span>
+				<div id="cart_holder" class="shopping_cart_box">
+					<h3>Your Cart</h3>
+					<div id="cart_items" class="cart_items"></div>
+					<div id="cart_total" class="cart_total"></div>
+					<div id="cart_actions" class="cart_actions" style:"display:none">
+						<a class="clear_cart_btn" href="/clearcart">Clear cart</a>
+						<a class="checkout_btn" href="/checkout">Checkout</a>
+					</div>
 				</div>
-			</div>
-		<%end%>
-		<%= yield %>
+			<%end%>
+		</div>
+		<div class="container">
+			<%= yield %>
+		</div>
 		<script rel="javascript" src="/jquery-1.8.0.min.js"></script>
 		<script rel="javascript" src="/js/bootstrap.min.js"></script>
 		<script rel="javascript" src="/custom.js"></script>

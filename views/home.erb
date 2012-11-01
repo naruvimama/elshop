@@ -1,8 +1,12 @@
-<div class="sidebar">
-	<a href="/showcase/refrigerators">Refrigerators</a>
-	<a href="/showcase/washingmachines">Washingmachines</a>
-	<a href="/showcase/airconditioners">Airconditioners</a>
-	<a href="/showcase/dishwashers">Dishwashers</a>
+<div class="topbar navbar">
+	<div class="navbar-inner">
+		<ul class="nav">
+			<li><a href="/showcase/refrigerators">Refrigerators</a></li>
+			<li><a href="/showcase/washingmachines">Washingmachines</a></li>
+			<li><a href="/showcase/airconditioners">Airconditioners</a></li>
+			<li><a href="/showcase/dishwashers">Dishwashers</a></li>
+		</ul>
+	</div>
 </div>
 <% @categories.each do |cat|%>
 	<div>
@@ -12,6 +16,6 @@
 				<%= erb :show_small, :locals => {item:item, cat:cat} %>
 			<%end%>
 		</div>
-		<span><a src=<%= url('/#{plural(cat)}')%>>More <%= plural(cat)%></span>
+		<span><a src=<%= url("/#{plural(cat)}")%>>More <%= plural(cat)%></span>
 	<%end%>
 </div>

@@ -17,7 +17,7 @@ helpers do
 		settings.authorization_realm
 	end
 	def authorize(username, password)
-    username=="admin" && password=="simbhashinybecky"
+        username=="admin" && password=="simbhashinybecky"
 	end
 	def get_klass(params)
 		if params[:item]
@@ -53,9 +53,9 @@ def get_items_with_filter(params)
 		items = items.all(:brand => params[:value])
 	end
 	if ! params['property'].nil?
-  	items = klass.all( params[:property] => params[:value] ).paginate(:page=>params[:page], :per_page=>8)
+        items = klass.all( params[:property] => params[:value] ).paginate(:page=>params[:page], :per_page=>8)
 	else
-  	items =klass.all.paginate(:page=>params[:page], :per_page=>8)
+        items =klass.all.paginate(:page=>params[:page], :per_page=>8)
 	end
 	item_category = params[:items]
 	[options, items, item_category]

@@ -130,12 +130,12 @@ class Delivery
 	property :delivery_code, String
 	property :cancelled, Boolean, :default => false
 	property :delivery_time, DateTime
-  property :note, Text
+    property :note, Text
 	property :delivered, Boolean
 	property :delivered_at, DateTime
 	property :delivery_note, Text
-  property :created_at, DateTime
-  property :updated_at, DateTime	
+    property :created_at, DateTime
+    property :updated_at, DateTime	
 
 	has n, :delivery_items
 	
@@ -182,14 +182,14 @@ class DeliveryItem
 	property :item_type, String
 	property :numbers, Integer
 	property :delivered, Boolean
-  property :delivered_at, DateTime	
-  property :created_at, DateTime
-  property :updated_at, DateTime	
+    property :delivered_at, DateTime	
+    property :created_at, DateTime
+    property :updated_at, DateTime	
 	property :delivery_id, Integer
 
 	belongs_to :delivery
 end
 
 DataMapper.finalize
-# Appliance.auto_migrate!
-DataMapper.auto_upgrade!
+Appliance.auto_migrate!
+# DataMapper.auto_upgrade!

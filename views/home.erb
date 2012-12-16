@@ -1,6 +1,6 @@
 <div class="topbar navbar">
 	<div class="navbar-inner">
-		<ul class="nav">
+		<ul class="nav category_link_box">
 			<li><a href="/showcase/refrigerators">Refrigerators</a></li>
 			<li><a href="/showcase/washingmachines">Washingmachines</a></li>
 			<li><a href="/showcase/airconditioners">Airconditioners</a></li>
@@ -9,13 +9,13 @@
 	</div>
 </div>
 <% @categories.each do |cat|%>
-	<div>
-		<h3><%= plural(cat).capitalize %></h3>
+	<div class="category_section">
+		<h3 class="category_head"><%= plural(cat).capitalize %></h3>
 		<div>
 			<% @items[(plural cat)].each do |item|%>
 				<%= erb :show_small, :locals => {item:item, cat:cat} %>
 			<%end%>
 		</div>
-		<span><a src=<%= url("/#{plural(cat)}")%>>More <%= plural(cat)%></span>
-	<%end%>
-</div>
+		<span class="more_of"><a href=<%= url("/#{plural(cat)}")%>>More <%= plural(cat)%></a></span>
+	</div>
+<%end%>

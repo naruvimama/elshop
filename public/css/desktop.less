@@ -14,9 +14,16 @@
   -o-border-radius: @radius;
   border-radius: @radius;
 }
+body {
+   margin:0px;
+   padding:0px;
+   min-height:100%;
+   background:url("/img/navy_blue.png") repeat 0 0;
+}
 
 .all_enclosing{
 	width:100%;
+	min-height:100%;
 	height:auto;
 	margin:0;
 	padding:0;
@@ -27,7 +34,6 @@
 	p, div, a {
 	    font-family: 'Vollkorn', Helvetica, Arial, sans-serif;
 	}
-	background:url("/img/navy_blue.png") repeat 0 0;
 
 	.btn {
 		.rounded-corners(8px);

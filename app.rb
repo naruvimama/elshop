@@ -23,7 +23,7 @@ helpers do
 		if params[:item]
 			klass = singular2class params[:item]
 		elsif params[:items]
-      klass = plural2class params[:items]
+			klass = plural2class params[:items]
 		end
 	end
 end
@@ -83,7 +83,7 @@ end
 
 get '/admin/home' do
 	login_required
-  erb :admin_home
+	erb :admin_home
 end
 
 get '/admin/appliances/:items' do
@@ -91,7 +91,7 @@ get '/admin/appliances/:items' do
 	@options, @items, @item_category = get_items_with_filter params
 	print @items.inspect
 	@admin = true
-  erb :products
+	erb :products
 end
 
 # Admin individual items new, create, edit, update, show, delete
@@ -215,7 +215,7 @@ end
 #
 def add_to_cart(params)
 	@appliance = Appliance.get params[:id]
-  session[:cart]||={}
+	session[:cart]||={}
 	if session[:cart].has_key? @appliance.id
 		new_number = session[:cart][@appliance.id][:numbers]+1
 		session[:cart][@appliance.id] = {numbers:new_number}.merge( {item_type:(@appliance.item.inspect).downcase, model_name:@appliance.model_number, price:@appliance.price, brand:@appliance.brand.name, appliance_id:@appliance.id, added_at:Time.now.to_s})
@@ -238,13 +238,13 @@ get '/clearcart' do
 end
 
 post '/cart/add' do
-  add_to_cart params
+	add_to_cart params
 	json success:true
 end
 
 delete '/cart/remove' do
 	@appliance = Appliance.get params[:id]
-  session[:cart]||={}
+	session[:cart]||={}
 	if session[:cart].has_key? @appliance.id
 		if session[:cart][@appliance.id][:numbers] > 1
 			session[:cart][@appliance.id][:numbers] -= 1
@@ -262,8 +262,9 @@ end
 get '/checkout' do
 	erb :checkout
 end
+
 get '/delivery_confirmed/:id'do
-  @delivery = Delivery.get params[:id]
+	@delivery = Delivery.get params[:id]
 	erb :delivery_confirmed, :layout => false
 end
 

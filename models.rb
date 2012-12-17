@@ -191,5 +191,5 @@ class DeliveryItem
 end
 
 DataMapper.finalize
-Appliance.auto_migrate!
-# DataMapper.auto_upgrade!
+#Appliance.auto_migrate!
+DataMapper.auto_upgrade!

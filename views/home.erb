@@ -16,6 +16,6 @@
 				<%= erb :show_small, :locals => {item:item, cat:cat} %>
 			<%end%>
 		</div>
-		<span class="more_of"><a href=<%= url("/#{plural(cat)}")%>>More <%= plural(cat)%></a></span>
+		<span class="more_of"><a href=<%= url("/showcase/#{plural(cat)}")%>>More <%= plural(cat)%></a></span>
 	</div>
 <%end%>

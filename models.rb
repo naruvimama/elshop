@@ -1,4 +1,4 @@
-DataMapper::setup(:default, 'mysql://chandra:axlefrog@localhost/elshop_dev')
+DataMapper::setup(:default, 'mysql://username:password@localhost/elshop_dev')
 
 class Brand
 	include DataMapper::Resource

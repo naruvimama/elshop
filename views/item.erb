@@ -1,23 +1,29 @@
 <div>
 </div>
-<div>
-	<img src=<%= @item.product_pic %>/>
-	<h4><%= "#{@item.brand.name} - #{@item.name} - #{@item.model_number}" %></h4>
-	<h4>ElShop price Rs. <%= @item.price %></h4>
-	<h3>Showroom price Rs. <strike><%= @item.MRP%></strike></h3>
-	<h4>Colour <%= @item.colour %></h4>
-	<h4>Energy star rating <%= @item.star_rating %></h4>
-	<p><%= @item.description %></p>
-	<% if @item.valueformoney %>
-		<div class="valueformoney" ></div>
-	<%end%>
-	<% if @item.topselling %>
-		<div class="topselling" ></div>
-	<%end%>
-	<% if @item.toprange %>
-		<div class="toprange" ></div>
-	<%end%>
-	<a href=<%= @item.product_url %>>External product link</a>
-	<a class="buy_now_btn" href="#" data_id=<%= @item.id %>>Buy now</a>
-	<a class="add_to_cart_btn" href="#" data_id=<%= @item.id %>>Add to cart</a>
+<div class="product-display">
+	<div class="product-pic-big">
+		<img src=<%= @item.product_pic %>/>
+	</div>
+	<div class="product-text">
+		<h4><%= "#{@item.brand.name} - #{@item.name} - #{@item.model_number}" %></h4>
+		<h4 class="el-price">ElShop price Rs. <u><%= @item.price %></u></h4>
+		<h3 class="showroom-price">Showroom price Rs. <strike><%= @item.MRP%></strike></h3>
+		<div class="product-details-box">
+			<h4>Colour <%= @item.colour %></h4>
+			<h4>Energy star rating <%= @item.star_rating %></h4>
+			<p><%= @item.description %></p>
+		</div>
+		<% if @item.valueformoney %>
+			<div class="valueformoney" ></div>
+		<%end%>
+		<% if @item.topselling %>
+			<div class="topselling" ></div>
+		<%end%>
+		<% if @item.toprange %>
+			<div class="toprange" ></div>
+		<%end%>
+		<a href=<%= @item.product_url %>>External product link</a>
+		<a class="buy_now_btn" href="#" data_id=<%= @item.id %>>Buy now</a>
+		<a class="add_to_cart_btn" href="#" data_id=<%= @item.id %>>Add to cart</a>
+	</div>
 </div>
